@@ -14,6 +14,17 @@ function convertDecimalToBinary(x) {
         }
         console.log(bi)
 }
+// Another approach
+let r =[];
+r[0] =0;
+for(let i =0; i<=n; i++) {
+    if(i%2!==0) {
+        r[i] = r[Math.floor(i/2)] +1;
+    } else {
+        r[i] = r[i/2];
+    }
+    // convertDecimalToBinary(i);
 
+}
 
 console.log(r);
