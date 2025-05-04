@@ -63,41 +63,6 @@ console.log(decodeWays("126"))
 
 // let s = "12";
 
-class Decoder {
-    constructor() {
-        this.t = new Array(101).fill(-1);
-    }
-
-    solve(i, s, n) {
-        if (this.t[i] !== -1) {
-            return this.t[i];
-        }
-
-        if (i === n) {
-            return this.t[i] = 1; // one valid split done
-        }
-
-        if (s[i] === '0') {
-            return this.t[i] = 0; // not possible to split
-        }
-
-        let result = this.solve(i + 1, s, n);
-
-        if (i + 1 < n) {
-            if (s[i] === '1' || (s[i] === '2' && s[i + 1] <= '6')) {
-                result += this.solve(i + 2, s, n);
-            }
-        }
-
-        return this.t[i] = result;
-    }
-
-    numDecodings(s) {
-        const n = s.length;
-        this.t.fill(-1);
-        return this.solve(0, s, n);
-    }
-}
 
 
 
