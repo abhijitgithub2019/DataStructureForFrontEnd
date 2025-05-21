@@ -36,5 +36,3 @@ if (n1 < n2) {
 
 return interArr;
 
-
-console.log(interArr);
