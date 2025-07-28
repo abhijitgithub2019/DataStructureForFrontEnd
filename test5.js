@@ -435,4 +435,10 @@ function curry(func) {
     };
   
   }
+
+  function sum(a, b, c) {
+    return a + b + c;
+  }
+  
+  let curriedSum = curry(sum);
 //   console.log(mul(2)(3)(7));  
